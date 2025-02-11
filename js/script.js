@@ -12,6 +12,7 @@ function createBoard() {
         cell.addEventListener("click", makeMove);
         board.appendChild(cell);
     });
+    updateCursor();
 }
 
 function makeMove(event) {
@@ -33,6 +34,7 @@ function makeMove(event) {
 
     currentPlayer = currentPlayer === "X" ? "O" : "X";
     status.textContent = `Player ${currentPlayer}'s turn`;
+    updateCursor();
 }
 
 function checkWinner() {
@@ -52,6 +54,11 @@ function resetGame() {
     currentPlayer = "X";
     status.textContent = "Player X's turn";
     createBoard();
+}
+
+function updateCursor() {
+  board.classList.toggle("x-turn", currentPlayer === "X");
+  board.classList.toggle("o-turn", currentPlayer === "O");
 }
 
 createBoard();

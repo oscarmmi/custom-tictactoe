@@ -20,6 +20,13 @@ body {
     border: 2px solid #333;
     cursor: pointer;
 }
+.board.x-turn .cell {
+    cursor: crosshair;
+}
+
+.board.o-turn .cell {
+    cursor: pointer;
+}
 .cell.taken {
     cursor: not-allowed;
 }
