@@ -13,6 +13,7 @@ function createBoard() {
         board.appendChild(cell);
     });
     updateCursor();
+    updateStatus();
 }
 
 function makeMove(event) {
@@ -35,6 +36,7 @@ function makeMove(event) {
     currentPlayer = currentPlayer === "X" ? "O" : "X";
     status.textContent = `Player ${currentPlayer}'s turn`;
     updateCursor();
+    updateStatus();
 }
 
 function checkWinner() {
@@ -57,8 +59,13 @@ function resetGame() {
 }
 
 function updateCursor() {
-  board.classList.toggle("x-turn", currentPlayer === "X");
-  board.classList.toggle("o-turn", currentPlayer === "O");
+    board.classList.toggle("x-turn", currentPlayer === "X");
+    board.classList.toggle("o-turn", currentPlayer === "O");
+}
+
+function updateStatus() {
+    status.classList.toggle("x-turn", currentPlayer === "X");
+    status.classList.toggle("o-turn", currentPlayer === "O");
 }
 
 createBoard();
