@@ -1,7 +1,14 @@
 const board = document.getElementById("board");
 const status = document.getElementById("status");
+const xWinsElement = document.getElementById("x-wins");
+const oWinsElement = document.getElementById("o-wins");
+const drawsElement = document.getElementById("draws");
+
 let currentPlayer = "X";
 let gameBoard = Array(9).fill(null);
+let xWins = 0;
+let oWins = 0;
+let draws = 0;
 
 function createBoard() {
     board.innerHTML = "";
@@ -26,10 +33,19 @@ function makeMove(event) {
 
     if (checkWinner()) {
         status.textContent = `Player ${currentPlayer} wins!`;
+        if (currentPlayer === "X") {
+            xWins++;
+            xWinsElement.textContent = xWins;
+        } else {
+            oWins++;
+            oWinsElement.textContent = oWins;
+        }
         return;
     }
     if (!gameBoard.includes(null)) {
         status.textContent = "It's a draw!";
+        draws++;
+        drawsElement.textContent = draws;
         return;
     }
 
@@ -56,6 +72,15 @@ function resetGame() {
     currentPlayer = "X";
     status.textContent = "Player X's turn";
     createBoard();
+}
+
+function resetScores() {
+    xWins = 0;
+    oWins = 0;
+    draws = 0;
+    xWinsElement.textContent = xWins;
+    oWinsElement.textContent = oWins;
+    drawsElement.textContent = draws;
 }
 
 function updateCursor() {

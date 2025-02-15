@@ -12,7 +12,12 @@
     <div id="status">Player X's turn</div>
     <div class="board" id="board"></div>
     <button onclick="resetGame()">Restart</button>
-
+    <div id="scoreboard">
+        <p>Player X Wins: <span id="x-wins">0</span></p>
+        <p>Player O Wins: <span id="o-wins">0</span></p>
+        <p>Draws: <span id="draws">0</span></p>
+        <button onclick="resetScores()">Reset Scores</button>
+    </div>
     <script src="js/script.js"></script>
 </body>
 </html>

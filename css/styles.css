@@ -85,3 +85,29 @@ button:hover {
     background-color: #f8d7da;
     color: #842029;
 }
+
+#scoreboard {
+    margin-top: 20px;
+    font-size: 1.2em;
+    text-align: left;
+}
+
+#scoreboard p {
+    margin: 5px 0;
+}
+
+#scoreboard button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    cursor: pointer;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#scoreboard button:hover {
+    background-color: #c82333;
+}
